@@ -1,8 +1,12 @@
 
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
-require_once "conecta.php";
+echo "<h1>PHP está funcionando!</h1>";
 
-echo "Conexão com o MySQL realizada com sucesso!";
+require_once __DIR__ . '/conecta.php';
 
+echo "<p>Conexão com o MySQL realizada com sucesso!</p>";
 ?>
