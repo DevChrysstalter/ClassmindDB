@@ -1,14 +1,10 @@
 
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistema Escolar</title>
+    <title>ClassMind - Login</title>
 
     <style>
         * {
@@ -20,29 +16,37 @@ session_start();
             margin: 0;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             background: #f1f5f9;
         }
 
-        .login-container {
-            width: 350px;
-            padding: 35px;
+        .login {
             background: white;
+            width: 360px;
+            padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px #00000015;
         }
 
-        h1 {
+        .logo {
             text-align: center;
-            color: #1e3a8a;
-            margin-bottom: 25px;
+            color: #2563eb;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
         }
 
         label {
             display: block;
             margin-bottom: 7px;
-            font-weight: bold;
+            color: #334155;
         }
 
         input {
@@ -50,18 +54,18 @@ session_start();
             padding: 12px;
             margin-bottom: 18px;
             border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            border-radius: 7px;
         }
 
         button {
             width: 100%;
-            padding: 12px;
-            background: #1e40af;
-            color: white;
+            padding: 13px;
             border: none;
-            border-radius: 6px;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
             cursor: pointer;
-            font-size: 16px;
         }
 
         button:hover {
@@ -72,33 +76,26 @@ session_start();
 
 <body>
 
-    <div class="login-container">
-        <h1>Login</h1>
+    <div class="login">
+
+        <div class="logo">ClassMind</div>
+        <div class="subtitle">Acesse sua conta acadêmica</div>
 
         <form action="login.php" method="POST">
 
-            <label for="cpf">CPF</label>
-            <input
-                type="text"
-                id="cpf"
-                name="cpf"
-                placeholder="Digite seu CPF"
-                maxlength="11"
-                required
-            >
+            <label>CPF</label>
+            <input type="text" name="cpf"
+                   placeholder="Digite seu CPF"
+                   maxlength="11" required>
 
-            <label for="senha">Senha</label>
-            <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite sua senha"
-                required
-            >
+            <label>Senha</label>
+            <input type="password" name="senha"
+                   placeholder="Digite sua senha" required>
 
             <button type="submit">Entrar</button>
 
         </form>
+
     </div>
 
 </body>
