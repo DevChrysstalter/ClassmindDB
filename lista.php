@@ -4,14 +4,12 @@ session_start();
 
 require_once "conecta.php";
 
-// Verifica se o aluno está logado
-if (!isset($_SESSION["aluno_id"])) {
+  if (!isset($_SESSION["aluno_id"])) {
     header("Location: index.php");
     exit;
 }
 
-// Busca os alunos cadastrados
-$sql = "SELECT id, nome, cpf FROM aluno";
+  $sql = "SELECT id, nome, cpf FROM aluno";
 $resultado = $conexao->query($sql);
 
 if (!$resultado) {
@@ -20,16 +18,16 @@ if (!$resultado) {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+   <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>ClassMind - Alunos</title>
+       <title>ClassMind - Alunos</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #f1f5f9;
-            padding: 30px;
+                padding: 30px;
         }
 
         h1 {
