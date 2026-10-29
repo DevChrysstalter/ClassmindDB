@@ -1,15 +1,23 @@
 
 <?php
 
-$host = "SEU_HOST_MYSQL";
-$banco = "SEU_NOME_DO_BANCO";
-$usuario = "SEU_USUARIO_MYSQL";
-$senha = "SUA_SENHA_MYSQL";
+$host = "sql113.infinityfree.com";
+$banco = "if0_43107254_meu_banco";
+$usuario = "if0_43107254";
+$senha = "KnigrLlCuJ";
 
-$conexao = new mysqli($host, $usuario, $senha, $banco);
+mysqli_report(MYSQLI_REPORT_OFF);
+
+$conexao = new mysqli(
+    $host,
+    $usuario,
+    $senha,
+    $banco,
+    3306
+);
 
 if ($conexao->connect_error) {
-    die("Erro na conexão com o banco de dados.");
+    die("Erro na conexão: " . $conexao->connect_error);
 }
 
 $conexao->set_charset("utf8mb4");
