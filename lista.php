@@ -13,6 +13,10 @@ if (!isset($_SESSION["aluno_id"])) {
 // Busca os alunos cadastrados
 $sql = "SELECT id, nome, cpf FROM aluno";
 $resultado = $conexao->query($sql);
+
+if (!$resultado) {
+    die("Erro ao consultar alunos: " . $conexao->error);
+}
 ?>
 
 <!DOCTYPE html>
